@@ -13,3 +13,8 @@ The source data resides in S3 and needs to be processed in Sparkify's data wareh
 
 Example DAG:
 ![image](https://user-images.githubusercontent.com/6599253/224577520-9538a06a-92e8-4598-b626-51dd5b5db501.png)
+
+## Datasets
+Two datasets hosted in S3 are used:
+* Log data: `s3://udacity-dend/log_data`
+* Song data: `s3://udacity-dend/song_data`
