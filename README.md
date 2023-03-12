@@ -12,3 +12,4 @@ The source data resides in S3 and needs to be processed in Sparkify's data wareh
 * Custom operaters should consitute the functional piece of the data pipeline
 
 Example DAG:
+![image](https://user-images.githubusercontent.com/6599253/224577520-9538a06a-92e8-4598-b626-51dd5b5db501.png)
