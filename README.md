@@ -1,8 +1,8 @@
 # Automate Data Pipelines
 
-A music streaming company, Sparkify, has decided that it is time to introduce more automation and monitoring to their data warehouse ETL pipelines and come to the conclusion that the best tool to achieve this is Apache Airflow.
+Project combines song metadata and song listen log files to surface analytics. JSON data stored in S3 is fed to a datat warehouse through a data warehouse defined in Apache Airflow. Redshift is used to stage the stage data before insertion into suitable tables for analysis. Data quality checks are performed before the pipeline finishes executing. End result is a Redshift cluster with data organised into a star schema with fact and dimension tables. Star schema is suitable for this application since denormalisatio is easy, queries are straightforward and aggregations are fast. 
 
-They're looking to create high grade data pipelines that are dynamic and built from reusable tasks, can be monitored, and allow easy backfills. They have also noted that the data quality plays a big part when analyses are executed on top the data warehouse and want to run tests against their datasets after the ETL steps have been executed to catch any discrepancies in the datasets.
+Goal: create high grade data pipelines that are dynamic and built from reusable tasks, can be monitored, and allow easy backfills.
 
 The source data resides in S3 and needs to be processed in Sparkify's data warehouse in Amazon Redshift. The source datasets consist of JSON logs that tell about user activity in the application and JSON metadata about the songs the users listen to.
 
@@ -18,3 +18,8 @@ Example DAG:
 Two datasets hosted in S3 are used:
 * Log data: `s3://udacity-dend/log_data`
 * Song data: `s3://udacity-dend/song_data`
+
+## Configure Airflow
+In airflow.cfg (~/airflow) update `dags_folder` and `plugins_folder` to the project subdirectories. Set load_examples = False.
+
+
