@@ -22,4 +22,19 @@ Two datasets hosted in S3 are used:
 ## Configure Airflow
 In airflow.cfg (~/airflow) update `dags_folder` and `plugins_folder` to the project subdirectories. Set load_examples = False.
 
+## Configure Environment
+Create `DB/PASSWORD` in `redshift.cfg`
 
+## Create IAM role, Redshift Cluster, configure TCP Connectivity and create Redshift tables
+` $ python create_redshift_cluster.py --query_file create_tables.sql
+
+# Start Airflow
+```
+ $ airflow initdb
+ $ airflow scheduler
+ $ airflow webserver
+```
+
+# Tear down
+Delete IAM role and Redshift cluster
+` $ python create_cluster.py --delete`
