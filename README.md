@@ -30,7 +30,7 @@ Create `DB/PASSWORD` in `redshift.cfg`
 
 ## Start Airflow
 ```
- $ airflow initdb
+ $ airflow db init
  $ airflow scheduler
  $ airflow webserver
 ```
