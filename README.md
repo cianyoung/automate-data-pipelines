@@ -26,15 +26,15 @@ In airflow.cfg (~/airflow) update `dags_folder` and `plugins_folder` to the proj
 Create `DB/PASSWORD` in `redshift.cfg`
 
 ## Create IAM role, Redshift Cluster, configure TCP Connectivity and create Redshift tables
-` $ python create_redshift_cluster.py --query_file create_tables.sql `
+` $ python create_redshift_cluster.py --query_file create_tables.sql
 
-## Start Airflow
+# Start Airflow
 ```
  $ airflow db init
  $ airflow scheduler
  $ airflow webserver
 ```
 
-## Tear down
+# Tear down
 Delete IAM role and Redshift cluster
 ` $ python create_cluster.py --delete`
